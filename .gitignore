@@ -1,0 +1,10 @@
+*.py[co]
+
+# Unit test / coverage reports
+.coverage
+
+# Mac Finder
+*.DS_Store
+
+# pycharm
+.idea/*

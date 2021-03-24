@@ -1,0 +1,20 @@
+{% load i18n %}
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <a href="#" class="left-sidebar-toggle">{% trans "使用者管理" %}</a>
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll">
+                <div class="left-sidebar-content">
+                    <ul class="sidebar-elements">
+                        <li class="divider">{% trans "目錄" %}</li>
+                        <li{% if current_section == 'income_project' %} class="active" {% endif %}>
+                            <a href="#"><i class="icon mdi mdi-money"></i><span>{% trans "設計需求單" %}</span></a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <p>© {% now 'Y' %} 設計需求表單</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

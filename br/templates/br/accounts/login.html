@@ -1,0 +1,30 @@
+{% extends 'br/base.html' %}
+{% load beagle i18n %}
+
+{% block main_content %}
+    <div class="main-content container-fluid">
+        <div class="splash-container">
+            <div class="card card-border-color card-border-color-primary">
+                <div class="card-header">
+                    <span class="splash-description">登入</span>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.username|beagle }}
+                        {{ form.password|beagle }}
+                        <div class="form-group login-submit">
+                            <button type="submit" class="btn btn-primary btn-xl">登入</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="splash-footer">
+                    <span>
+                        還沒有帳號嗎？
+                        <a href="{% url 'br:sign-in' %}">Sign Up</a>
+                    </span>
+                </div>
+        </div>
+    </div>
+{% endblock main_content %}

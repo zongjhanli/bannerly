@@ -1,0 +1,33 @@
+{% extends 'br/base.html' %}
+{% load beagle i18n %}
+
+{% block main_content %}
+    <div class="main-content container-fluid">
+        <div class="splash-container sign-up">
+            <div class="card card-border-color card-border-color-primary">
+                <div class="card-header">
+                    <span class="splash-description">請完成註冊流程</span>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <span class="splash-title pb-4">Sign Up</span>
+                        {% csrf_token %}
+                        {{ form.username|beagle }}
+                        {{ form.email|beagle }}
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form.password1|beagle }}
+                            </div>
+                            <div class="col-6">
+                                {{ form.password2|beagle }}
+                            </div>
+                        </div>
+                        <div class="form-group pt-2">
+                            <button type="submit" class="btn btn-block btn-primary btn-xl">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

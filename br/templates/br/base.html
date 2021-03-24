@@ -1,0 +1,34 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>{% block title %}{% trans '設計單申請系統登入' %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="{% static 'images/cropped-ico-packer.png' %}" />
+    <link rel="stylesheet" href="{% static 'libs/beagle/perfect-scrollbar/css/perfect-scrollbar.css' %}" />
+    <link rel="stylesheet" href="{% static 'libs/beagle/material-design-icons/css/material-design-iconic-font.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'libs/beagle/app.css' %}" />
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="{% static 'styles/br/base.css' %}" />
+</head>
+<body>
+    {% block main_content %}
+        <div id="burger" class="be-wrapper be-collapsible-sidebar">
+            {% include "br/navbar.html" %}
+            {% block content %}
+                {% include "br/sidebar.html" %}
+                {% block mini_content %}{% endblock mini_content %}
+            {% endblock %}
+        </div>
+    {% endblock main_content %}
+
+    <script src="{% static 'libs/beagle/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/perfect-scrollbar/js/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'libs/beagle/app.js' %}"></script>
+    <script src="{% static 'libs/js-cookie/js.cookie.js' %}"></script>
+    {% block scripts %}{% endblock scripts %}
+    <script src="{% static 'javascripts/br/base.js' %}"></script>
+</body>
+</html>
