@@ -1,0 +1,17 @@
+language: python
+
+python:
+  - "3.7.9"
+
+install:
+  - pip install -r requirements.txt
+  - pip install coverage codecov --ignore-installed
+
+script:
+  - coverage run -m unittest
+
+after_success:
+  - codecov --token=d33cc1d9-4fc9-4eb9-8610-9d853ba0ec74
+
+notifications:
+  slack: amigo-7n17651:o3h0JEX3hkzgZfXsawS8RuXp
